@@ -1,0 +1,27 @@
+.addEmployees-container{
+    position: absolute;
+    top: 150px;
+    height: 300px;
+    width: 85%;
+    margin-left: 200px;
+}
+
+.add-employees{
+    margin-left: 100px;
+    margin-top: 15px;
+}
+
+.addEmployees-table{
+    margin-top: 10px;
+    padding-left: 100px;
+    height: 250px;
+    width: 90%;
+}
+
+@media (max-width: 768px) {
+    #addEmployee-container {
+      top: 60px;
+      height: 200px;
+      width: 90%;
+    }
+  }

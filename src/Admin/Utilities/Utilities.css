@@ -1,0 +1,23 @@
+.addUtilities-container{
+    position: absolute;
+    top: 150px;
+    height: 300px;
+    width: 85%;
+    margin-left: 200px;
+}
+.add-Utilities{
+    margin-left: 100px;
+    margin-top: 15px;
+}
+.addUtilities-table{
+    margin-top: 10px;
+    padding-left: 100px;
+    height: 250px;
+}
+@media(max-width:768px){
+    #addUtilities-container{
+        top: 60px;
+        height: 200px;
+        width: 90%;
+    }
+}

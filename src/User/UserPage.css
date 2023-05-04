@@ -1,0 +1,55 @@
+/* .App {
+  text-align: center;
+} */
+
+/* .profile-wrapper {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+    margin-right: 20px;
+  }
+  
+  .button-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 20px;
+  }
+  
+  .button-wrapper button {
+    margin: 10px;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .profile-wrapper {
+      justify-content: end;
+    }
+  
+    .button-wrapper {
+      flex-direction: row;
+    }
+  
+    .button-wrapper button {
+      margin: 10px 5px;
+    }
+  } */
+  
+  
+  .user-viewMeter{
+    position: absolute;
+    top: 190px;
+    left: 240px;
+    height: 225px;
+    width: 80%;
+  }
+  /* User View Meter Reading */
+  .user-viewMeterReading{
+    position: absolute;
+    top: 190px;
+    left: 240px;
+    height: 225px;
+    width: 80%;
+  }
+  
+  

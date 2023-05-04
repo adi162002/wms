@@ -1,0 +1,26 @@
+.addCities-container{
+    position: absolute;
+    top: 80px;
+    height: 300px;
+    width: 85%;
+    margin-left: 180px;
+}
+.addCities{
+    margin-left: 60px;
+    margin-top: 15px;
+}
+.addCities-table{
+    position: absolute;
+    top: 40px;
+    height: 400px;
+    width: 80%;
+    padding: 60px;
+    margin-top: 10px;
+}
+@media(max-width:768px){
+    #addCities-container{
+    top: 60px;
+    height: 200px;
+    width: 90%;
+    }
+}

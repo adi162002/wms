@@ -1,0 +1,99 @@
+*{
+  font-family: 'Poppins', sans-serif;
+}
+.brandLogo{
+  height: 110px;
+}
+.box
+{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 400px;
+  height: 200px;
+  background:   #74D9ED ;
+  border-radius: 10px;
+}
+.box h1{
+  padding: 10px 0 10px 120px;
+  border-bottom: 1px solid #1A706D;
+}
+.box h3{
+  padding: 10px 0px 5px 10px;
+}
+.SignIn
+{
+  padding: 30px 0 20px 60px;
+}
+.land
+{
+    background-color: #D6E8F5;
+    height: 100vh;
+}
+.brand{
+  display: flex;
+  justify-content: center;
+
+}
+.brand img{
+  height: 120px;
+}
+.bubbles img
+{
+  width: px;
+  height: 75px;
+  animation: bubble 7s linear infinite;
+  animation-direction: reverse;
+}
+.bubbles{
+  width: 100%;
+  display:flex;
+  align-items: center;
+  justify-content: space-around;
+  position: absolute;
+  bottom: 0;
+}
+.but{
+  margin-top: 80px;
+}
+@keyframes bubble {
+  0%{
+    transform: translateY(0);
+    opacity: 0;
+  }
+  50%{
+    opacity: 1;
+  }
+  70%{
+    opacity: 1;
+  }
+  100%{
+    transform: translateY(-80vh);
+    opacity: 0;
+  }
+}
+.bubbles img:nth-child(1)
+{
+  animation-delay: 2s;
+}
+.bubbles img:nth-child(2)
+{
+  animation-delay: 1s;
+}
+.bubbles img:nth-child(3)
+{
+  animation-delay: 3s;
+}
+.bubbles img:nth-child(4)
+{
+  animation-delay: 4.5s;
+}
+.bubbles img:nth-child(5)
+{
+  animation-delay: 6s;
+}
+.bubbles img:nth-child(6)
+{
+  animation-delay: 5s;
+}

@@ -1,0 +1,24 @@
+.addMeters-container{
+    position: absolute;
+    top: 80px;
+    height: 300px;
+    width: 85%;
+    margin-left: 180px;
+}
+.addMeters{
+    margin-left: 100px;
+    margin-top: 15px;
+}
+.addMeters-table{
+    margin-top: 10px;
+    height: 250px;
+    padding-left: 100px;
+    width: 90%;
+}
+@media(max-width:768px){
+    #addMetersContainer{
+        top: 60px;
+        height: 200px;
+        width: 90%;
+    }
+}
