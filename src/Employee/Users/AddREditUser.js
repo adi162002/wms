@@ -35,22 +35,16 @@ function AddREditUser() {
   }, []);
 
   const handleEdit = (row) => {
-    // Open dialog box with form for editing row data
+    
   };
 
-  const handleDelete = (id) => {
-    fetch(`/api/users/${id}`, { method: 'DELETE' })
-      .then((response) => {
-
-        if (response.ok) {
-          // Delete row from table
-        } else {
-          // Handle error
-        }
-      })
-      .catch((error) => {
-        // Handle error
-      });
+  const handleDelete = async (Id) => {
+    try {
+      await axios.delete(`${apiLink}/users/${Id}`);
+      setData(data.filter((row) => row.userId !== Id));
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   const columns = [
@@ -137,7 +131,7 @@ function AddREditUser() {
             variant="contained"
             color="secondary"
             size="small"
-            onClick={() => handleDelete(params.row.id)}
+            onClick={() => handleDelete(params.row.userId)}
             style={{ marginLeft: 8 }}
           >
             Delete

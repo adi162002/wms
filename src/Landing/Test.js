@@ -22,8 +22,8 @@ function Test() {
     await axios
       .post(`${apiLink}/auth/api/get-email`, {}, { headers })
       .then((response) => {
-        sessionStorage("response",response)
-        navigate("/employee", {
+        sessionStorage.setItem("response",JSON.stringify(response.data))
+        navigate("/Dashboard", {
           state: {
             resp: res.data,
           },
@@ -39,8 +39,7 @@ function Test() {
   }
   useEffect(() => {
     window.google.accounts.id.initialize({
-      client_id:
-        "692555571191-q14fs5nld3qfbjse8eh385ot1alb20jh.apps.googleusercontent.com",
+      client_id:"692555571191-q14fs5nld3qfbjse8eh385ot1alb20jh.apps.googleusercontent.com",
       callback: fn,
     });
 

@@ -14,6 +14,8 @@ import "./Meters.css"
 
 
 function AddREditMeter() {
+  const auth=JSON.parse(sessionStorage.getItem("response"))
+
   const [openPopup, setOpenPopup] = useState(false)
   const [data, setData] = useState([])
   useEffect(() => {
@@ -126,6 +128,8 @@ function AddREditMeter() {
   }
   return (
     <>
+     <Navbar prop={auth}/>
+     <SideBar role={{prop:auth}} >
         <div className='addMeters-container'>
           <div className='addMeters'>
             <Button
@@ -162,6 +166,7 @@ function AddREditMeter() {
     
           </div>
         </div>
+        </SideBar>
     </>
   )
 }

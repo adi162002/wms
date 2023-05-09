@@ -11,9 +11,13 @@ import Navbar from '../../Navbar/Navbar'
 import { useEffect } from 'react'
 import axios from 'axios'
 import { apiLink } from '../../Config'
+import { useHistory } from 'react-router-dom';
+
 import "./Cities.css"
 
 function AddREditCity() {
+  const auth=JSON.parse(sessionStorage.getItem("response"))
+  console.log(auth)
   const [openPopup, setOpenPopup] = useState(false)
     const [data, setData] = useState([])
     useEffect(() => {
@@ -121,7 +125,8 @@ function AddREditCity() {
     
   return (
     <>
-    <SideBar>
+     <Navbar prop={auth}/>
+     <SideBar role={{prop:auth}} >
     <div className='addCities-container'>
     <div className='addCities'> 
     <Button

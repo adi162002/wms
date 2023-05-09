@@ -35,18 +35,13 @@ function AddUtility() {
       // Open dialog box with form for editing row data
     };
     
-    const handleDelete = (id) => {
-      fetch(`/api/users/${id}`, { method: 'DELETE' })
-        .then((response) => {
-          if (response.ok) {
-            // Delete row from table
-          } else {
-            // Handle error
-          }
-        })
-        .catch((error) => {
-          // Handle error
-        });
+    const handleDelete = async (utilityId) => {
+      try {
+        await axios.delete(`${apiLink}/utility/${utilityId}`);
+        setTableData(tableData.filter((row) => row.utilityId !== utilityId));
+      } catch (error) {
+        console.error(error);
+      }
     };
     const columns = [
       // {

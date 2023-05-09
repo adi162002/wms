@@ -36,7 +36,7 @@ function EmployeePage() {
     }
     {x.roleName==='ADMIN' && 
     <div>
-    <Navbar prop={x}/>
+     <Navbar prop={x}/>
     <div className='employeePage-container'>
     {/* <HourlyUpload/> */}
     <EmployeeViewMR prop={x}/>
