@@ -6,11 +6,16 @@ import PopUp from '../../Components/PopUp'
 import { DataGrid } from '@mui/x-data-grid'
 import { Button } from '@mui/material'
 import "./Employees.css"
+import SideBar from '../../Sidebar/SideBar'
+import Navbar from '../../Navbar/Navbar'
 
 
 function AddREditEmployee() {
+  const auth = JSON.parse(sessionStorage.getItem("response"));
+
     const [openPopup, setOpenPopup] = useState(false)
     const [data, setData] = useState([])
+    console.log(data)
 
     const handleEdit = (row) => {
       // Open dialog box with form for editing row data
@@ -30,50 +35,30 @@ function AddREditEmployee() {
         });
     };
     const columns = [
-      // {
-      //   name: "User Id",
-      //   selector: row => row.employeeId
-      // },
-      // {
-      //   name: "Email",
-      //   selector: row => row.employeeEmail
-      // },
-      // {
-      //   name: "Role",
-      //   selector: row => row.employeeRole
-      // },
-      // {
-      //   name: "Name",
-      //   selector: row => row.employeeName
-      // },
-      // {
-      //   name: "Address",
-      //   selector: row => row.employeeAddress
-      // },
-
+    
       {
-        field: 'employeeName',
+        field: 'userName',
         headerName: 'Emplooyee Name',
         width: 200,
         editable: true,
         flex: 1,
       },
       {
-        field: 'employeeEmail',
+        field: 'userEmail',
         headerName: 'Employee Email',
         width: 150,
         editable: true,
         flex: 1,
       },
       {
-        field: 'employeeRole',
+        field: 'roleName',
         headerName: 'Role',
         width: 100,
         editable: true,
         flex: 1,
       },
       {
-        field: 'employeeAddress',
+        field: 'userAddress',
         headerName: 'Employee Address',
         width: 100,
         editable: true,
@@ -120,6 +105,8 @@ function AddREditEmployee() {
 
   return (
     <>
+     <Navbar prop={auth} />
+      <SideBar role={ auth }>
     <div className='addEmployees-container'>
     <div className='add-employees'> 
     <Buttons
@@ -152,6 +139,7 @@ function AddREditEmployee() {
     /> 
     </div>
     </div>
+    </SideBar>
     </>
   )
 }

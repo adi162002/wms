@@ -126,7 +126,7 @@ function AddREditCity() {
   return (
     <>
      <Navbar prop={auth}/>
-     <SideBar role={{prop:auth}} >
+     <SideBar role={auth} >
     <div className='addCities-container'>
     <div className='addCities'> 
     <Button

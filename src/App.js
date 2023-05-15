@@ -20,6 +20,9 @@ import AddREditEmployee from "./Admin//Employees/AddREditEmployee";
 import AdminPage from "./Admin/AdminPage";
 import UserPage from "./User/UserPage";
 import PrivateRoutes from "./PrivateRoutes";
+import MeterMappings from "./Employee/MeterMappings.js/MeterMappings";
+import UserViewMeter from "./User/UserViewMeter";
+import UserViewMeterReading from "./User/UserViewMeterReading";
 function App() {
   return (
     <BrowserRouter>
@@ -35,6 +38,10 @@ function App() {
           <Route path="/profile" element={<AdminProfile />} />
           <Route path="/utility" element={<AddUtility />} />
           <Route path="/employees" element={<AddREditEmployee />} />
+          <Route path="/metermappings" element={<MeterMappings />} />
+          <Route path="/viewmeter" element={<UserViewMeter />} />
+          <Route path="/meterreading" element={<UserViewMeterReading />} />
+
           <Route path="*" element={<h1>Page Not Found</h1>} />
         </Route>
       </Routes>

@@ -1,9 +1,34 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Box from '@mui/material/Box';
 import { DataGrid } from '@mui/x-data-grid';
 import "./UserPage.css"
+import axios from 'axios';
+import { apiLink } from '../Config';
+import Navbar from '../Navbar/Navbar';
+import SideBar from '../Sidebar/SideBar';
 
 function UserViewMeter() {
+  const auth = JSON.parse(sessionStorage.getItem("response"));
+  const id=auth.userId
+  const [rows, setrows] = React.useState([]);
+  useEffect(() => {
+    const getData = async () => {
+      try {
+        const response = await axios.get(`${apiLink}/meter/${id}`, {
+          headers: {
+            "ngrok-skip-browser-warning": "true"
+          }
+        });
+        // Handle the response data
+        console.log(response);
+        setrows([...rows,response.data])
+      } catch (error) {
+        console.log(error.response.status);
+      }
+    };
+
+    getData();
+  }, []);
     const columns = [
         {
           field: 'meterName',
@@ -13,21 +38,21 @@ function UserViewMeter() {
           flex:1,
         },
         {
-          field: 'meterCrossSectionalArea',
+          field: 'crossSecArea',
           headerName: 'Cross Section Area',
           width: 150,
           editable: true,
           flex:1,
         },
         {
-          field: 'meterCriticalVolume',
+          field: 'criticalVolume',
           headerName: 'Critical Volume',
           width: 150,
           editable: true,
           flex:1,
         },
         {
-            field: 'meterLocationPin',
+            field: 'locationPin',
             headerName: 'Location PIN',
             width: 150,
             editable: true,
@@ -36,11 +61,10 @@ function UserViewMeter() {
 
       ];
       
-      const rows = [
-        {meterName: 'rohit', meterCrossSectionalArea: 80, meterCriticalVolume: 25, meterLocationPin: 522614},   
-      ];
-      
   return (
+    <div>
+      <Navbar prop={auth}/>
+      <SideBar role={auth}>
     <div className="user-viewMeter">
       <DataGrid
         rows={rows}
@@ -50,6 +74,8 @@ function UserViewMeter() {
         disableColumnMenu
         disableColumnSort
       />
+    </div>
+    </SideBar>
     </div>
   )
 }

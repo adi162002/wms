@@ -63,8 +63,7 @@ function AddUserForm({ onSubmit, data }) {
       !formValues.roleName ||
       !formValues.userName ||
       !formValues.userAddress ||
-      !formValues.cityName ||
-      !formValues.meterName
+      !formValues.cityName
     ) {
       setFormValues((prevState) => ({
         ...prevState,

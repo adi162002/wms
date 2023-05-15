@@ -15,6 +15,8 @@ import "./Users.css"
 
 
 function AddREditUser() {
+  const auth=JSON.parse(sessionStorage.getItem("response"))
+
   const [openPopup, setOpenPopup] = useState(false)
   const [data, setData] = useState([])
   useEffect(() => {
@@ -34,7 +36,14 @@ function AddREditUser() {
     getuser();
   }, []);
 
-  const handleEdit = (row) => {
+  const handleEdit = async (row) => {
+    try{
+    setOpenPopup(true)
+    await axios.put(`${apiLink}/users`,)
+    }
+    catch{
+
+    }
     
   };
 
@@ -48,35 +57,6 @@ function AddREditUser() {
   };
 
   const columns = [
-    // {
-    //   name: "User Id",
-    //   selector: row => row.userId
-    // },
-    // {
-    //   name: "Email",
-    //   selector: row => row.userEmail
-    // },
-    // {
-    //   name: "Role",
-    //   selector: row => row.userRole
-    // },
-    // {
-    //   name: "Name",
-    //   selector: row => row.userName
-    // },
-    // {
-    //   name: "Address",
-    //   selector: row => row.userAddress
-    // },
-    // {
-    //   name: "City Assigned",
-    //   selector: row => row.assignCity
-    // },
-    // {
-    //   name: "Meter Id",
-    //   selector: row => row.assignMeterId
-    // },
-
     {
       field: 'userName',
       headerName: 'User Name',
@@ -149,6 +129,8 @@ function AddREditUser() {
   }
   return (
     <>
+    <Navbar prop={auth}/>
+     <SideBar role={auth} >
         <div className='addUsers-container'>
           <div className='addUsers'>
             <Button
@@ -184,6 +166,7 @@ function AddREditUser() {
            
           </div>
         </div>
+        </SideBar>
     </>
   )
 }

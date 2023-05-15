@@ -8,6 +8,8 @@ import {
   FaUsers,
   FaHandHoldingWater,
   FaWater,
+  FaMapMarked,
+  FaMapMarkedAlt,
 } from "react-icons/fa";
 import { FiLogOut } from "react-icons/fi";
 import { AnimatePresence } from "framer-motion";
@@ -16,7 +18,7 @@ import "./SideBar.css";
 
 const adminRoutes = [
   {
-    path: "/admin",
+    path: "/Dashboard",
     name: "Home",
     icon: <FaHome />,
   },
@@ -33,30 +35,35 @@ const adminRoutes = [
 ];
 const employeeRoutes = [
   {
-    path: "/employee",
+    path: "/Dashboard",
     name: "Home",
-    icon: <FaHome />,
+    icon: <FaHome title="Home"/>,
   },
   {
     path: "/city",
     name: "City",
-    icon: <FaCity />,
+    icon: <FaCity title="city"/>,
   },
   {
     path: "/meter",
     name: "Meter",
-    icon: <FaTachometerAlt />,
+    icon: <FaTachometerAlt title="meter" />,
   },
   {
     path: "/users",
     name: "Users",
-    icon: <FaUsers />,
+    icon: <FaUsers title="users" />,
+  },
+  {
+      path:"/metermappings",
+      name:"Meter Mappings",
+      icon:<FaMapMarkedAlt title="meter mappings"/>
   },
 ];
 
 const userRoutes = [
   {
-    path: "/user",
+    path: "/Dashboard",
     name: "Home",
     icon: <FaHome />,
   },
@@ -73,14 +80,14 @@ const userRoutes = [
 ];
 
 function 
-SideBar({ children, role: { prop } }) {
+SideBar({ children, role }) {
   const [isOpen, setIsOpen] = useState(false);
-  console.log(prop.roleName)
+  console.log(role.roleName)
 
   const routes =
-    prop.roleName === "ADMIN"
+    role.roleName === "ADMIN"
       ? adminRoutes
-      : prop.roleName === "EMPLOYEE"
+      : role.roleName === "EMPLOYEE"
       ? employeeRoutes
       : userRoutes;
 
@@ -136,7 +143,7 @@ SideBar({ children, role: { prop } }) {
               <FaBars onClick={toggle} />
             </div>
           </div>
-          <section className="routes">
+          <section className="roconsole.log(prop.roleName)utes">
             {routes.map((route, index) => {
               return (
                 <NavLink

@@ -1,6 +1,6 @@
 .employeePage-container {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: flex-end;
 }
 @media screen and (max-width: 768px) {
@@ -33,6 +33,7 @@
   top: 80px;
   width: 80%;
   padding: 40px;
+  margin-left: 500px;
 }
 @media screen and (max-width: 768px) {
   .hourly-upload-container {
@@ -42,6 +43,7 @@
     width: 100%;
     padding: 20px;
     text-align: center;
+
   }
   .hourly-upload-label {
     display: block;

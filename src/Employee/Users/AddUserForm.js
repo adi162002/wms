@@ -15,6 +15,7 @@ function AddUserForm({ onSubmit, data }) {
   const [city, setCity] = useState([]);
   const [meter, setMeter] = useState([]);
   useEffect(() => {
+    
     async function fetch() {
       await axios
         .get(`${apiLink}/city/all-city `, {

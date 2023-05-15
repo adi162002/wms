@@ -19,55 +19,43 @@ import Navbar from '../Navbar/Navbar'
 import { useLocation } from 'react-router-dom'
 import "./EmployeePage.css"
 function EmployeePage() {
+  const auth = JSON.parse(sessionStorage.getItem("response"));
+
   const location=useLocation()
- const x=location.state.resp
- const role=x.roleName;
- console.log(x.roleName)
+//  const auth=location.state.resp
+ console.log(auth.roleName)
   return (
     <>
-    {x.roleName==='EMPLOYEE' && 
+    {auth.roleName==='EMPLOYEE' && 
     <div>
-    <Navbar prop={x}/>
+    <Navbar prop={auth}/>
     <div className='employeePage-container'>
     <HourlyUpload/>
-    <EmployeeViewMR prop={x}/>
+    <EmployeeViewMR prop={auth}/>
     </div>
     </div>
     }
-    {x.roleName==='ADMIN' && 
+    {auth.roleName==='ADMIN' && 
     <div>
-     <Navbar prop={x}/>
+     <Navbar prop={auth}/>
     <div className='employeePage-container'>
     {/* <HourlyUpload/> */}
-    <EmployeeViewMR prop={x}/>
+    <EmployeeViewMR prop={auth}/>
     </div>
     </div>
     }
-    {x.roleName==='CUSTOMER' && 
+    {auth.roleName==='CUSTOMER' && 
     <div>
-    <Navbar prop={x}/>
+    <Navbar prop={auth}/>
     <div className='employeePage-container'>
     {/* <HourlyUpload/> */}
-    <EmployeeViewMR prop={x}/>
+    <EmployeeViewMR prop={auth}/>
     </div>
     </div>
     }
 
 
     </>
-
-  //  {role==='EMPLOYEE' && (
-  //   <>
-  //   <HourlyUpload/>
-  //   <EmployeeViewMR />
-  //   </>
-  //  ) }  
-  //  {role==='USER' && (
-  //   <>
-  //   {/* <HourlyUpload/> */}
-  //   <EmployeeViewMR />
-  //   </>
-  //  ) }  
   )
 }
 
